@@ -7,3 +7,5 @@ Robert Buj Gelonch, rbuj
   - actualitza les dependències de server-articles
   - mou NameArticleValidator a la carpeta validators
   - canvia el nom ArticleNewReactiveComponent a ArticleNewComponent
+  - elimina els fitxers de les proves i al fitxer de configuració angular.json
+    - ng config schematics.@schematics/angular:component.skipTests true

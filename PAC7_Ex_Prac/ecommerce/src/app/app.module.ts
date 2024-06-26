@@ -12,7 +12,6 @@ import { ArticleNewComponent } from './articles/article-new/article-new.componen
 import { AuthService } from './serveis/auth.service';
 import { AuthStoreService } from './serveis/auth-store.service';
 import { ImagePipe } from '../shared/image.pipe';
-import { NavbarComponent } from './articles/navbar/navbar.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { AuthInterceptor } from './serveis/auth.interceptor';
@@ -26,7 +25,6 @@ import { AuthInterceptor } from './serveis/auth.interceptor';
     ArticleNewComponent,
     ImagePipe,
     LoginComponent,
-    NavbarComponent,
     RegisterComponent
   ],
   imports: [

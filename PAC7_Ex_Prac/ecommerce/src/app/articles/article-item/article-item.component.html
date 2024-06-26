@@ -1,5 +1,5 @@
 <div class="article-item"  [class]="article.isOnSale ? 'article-item sale' : ''">
-    <img [src]="article.imageUrl | emptyimage">
+    <a routerLink="/article/{{article.id}}"><img [src]="article.imageUrl | emptyimage"></a>
     <div class="container">
         <div class="name">{{article.name}}</div>
         <div class="prize" [class]="!article.isOnSale ? 'prize not-on-sale' : ''">{{article.price | currency : 'EUR' : 'symbol' : '1.2-2'}}</div>

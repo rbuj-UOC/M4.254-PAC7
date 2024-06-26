@@ -16,6 +16,10 @@ export class ArticleService {
     });
   }
 
+  getArticle(code: string): Observable<Article> {
+    return this.http.get<Article>('/api/articles/' + code);
+  }
+
   changeQuantity(id: number, changeInQuantity: number): Observable<any> {
     return this.http.patch('/api/articles/' + id, {changeInQuantity: changeInQuantity});
   }

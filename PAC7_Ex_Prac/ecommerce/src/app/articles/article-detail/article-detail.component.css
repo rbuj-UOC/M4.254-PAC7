@@ -1,7 +1,8 @@
 .article-item {
   border: 1px solid black;
   border-radius: 5px;
-  padding: 10px;
+  margin: 12px;
+  padding: 12px;
   display: inline-block;
 }
 
@@ -11,4 +12,8 @@
 
 .article-item.sale {
   background-color: #C3C3E5;
+}
+
+.article-item img {
+  width: 400px;
 }

@@ -11,3 +11,4 @@ Robert Buj Gelonch, rbuj
     - ng config schematics.@schematics/angular:component.skipTests true
   - canvia el text al quadre de cerca d'articles
   - base de codi
+  - enrutament

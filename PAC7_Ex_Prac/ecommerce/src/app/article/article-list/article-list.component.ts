@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Article } from "../../model/article";
 import { ArticleQuantityChange } from '../../model/article-quantity-change';
 import { Observable } from 'rxjs/internal/Observable';
-import { ArticleService } from '../../serveis/article.service';
+import { ArticleService } from '../../services/article.service';
 import { Subject } from 'rxjs';
 import { startWith, merge, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 

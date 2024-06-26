@@ -16,3 +16,4 @@ Robert Buj Gelonch, rbuj
   - protegir la ruta per crear un article: avís abans de sortir
   - carregar les dades del detall de l'article abans de carregar el component
   - emmagatzemar el token d'inici de sessió a l'emmagatzematge local
+  - càrrega mandrosa mitjançant dos mòduls: auth i article

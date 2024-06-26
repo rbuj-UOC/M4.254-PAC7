@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Article } from '../../model/article';
-import { NameArticleValidator } from '../../validators/name-article-validator.directive';
-import { ArticleService } from '../../serveis/article.service';
+import { NameArticleValidator } from '../validators/name-article-validator.directive';
+import { ArticleService } from '../../services/article.service';
 
 @Component({
   selector: 'app-article-new',

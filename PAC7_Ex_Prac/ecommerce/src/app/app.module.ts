@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ArticleItemComponent } from './articles/article-item/article-item.component';
 import { ArticleListComponent } from './articles/article-list/article-list.component';
-import { ArticleNewReactiveComponent } from './articles/article-new-reactive/article-new-reactive.component';
+import { ArticleNewComponent } from './articles/article-new/article-new.component';
 import { ImagePipe } from '../shared/image.pipe';
 import { NavbarComponent } from './articles/navbar/navbar.component';
 
@@ -16,7 +16,7 @@ import { NavbarComponent } from './articles/navbar/navbar.component';
     AppComponent,
     ArticleItemComponent,
     ArticleListComponent,
-    ArticleNewReactiveComponent,
+    ArticleNewComponent,
     ImagePipe,
     NavbarComponent
   ],

@@ -5,12 +5,12 @@ import { NameArticleValidator } from '../../validators/name-article-validator.di
 import { ArticleService } from '../../serveis/article.service';
 
 @Component({
-  selector: 'app-article-new-reactive',
-  templateUrl: './article-new-reactive.component.html',
-  styleUrl: './article-new-reactive.component.css'
+  selector: 'app-article-new',
+  templateUrl: './article-new.component.html',
+  styleUrl: './article-new.component.css'
 })
 
-export class ArticleNewReactiveComponent {
+export class ArticleNewComponent {
 
   @Output() private articleCreated: EventEmitter<void> = new EventEmitter();
 

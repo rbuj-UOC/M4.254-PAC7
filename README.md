@@ -6,3 +6,4 @@ Robert Buj Gelonch, rbuj
   - server-articles de la nova pàctica
   - actualitza les dependències de server-articles
   - mou NameArticleValidator a la carpeta validators
+  - canvia el nom ArticleNewReactiveComponent a ArticleNewComponent

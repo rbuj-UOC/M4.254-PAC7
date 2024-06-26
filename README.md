@@ -14,3 +14,4 @@ Robert Buj Gelonch, rbuj
   - enrutament
   - protegir la ruta per crear un article: només usuaris autenticats
   - protegir la ruta per crear un article: avís abans de sortir
+  - carregar les dades del detall de l'article abans de carregar el component

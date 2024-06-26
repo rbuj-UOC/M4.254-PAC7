@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Article } from '../../model/article';
 import { ActivatedRoute } from '@angular/router';
-import { ArticleService } from '../../serveis/article.service';
 
 @Component({
   selector: 'app-article-detail',
@@ -10,12 +9,12 @@ import { ArticleService } from '../../serveis/article.service';
 })
 export class ArticleDetailComponent {
   public article: Article;
-  constructor(private articleService: ArticleService,
-    private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    const articleCode = this.route.snapshot.paramMap.get('id');
-    this.articleService.getArticle(articleCode).subscribe(article => this.article = article);
+    this.route.data.subscribe((data: {article: Article}) => {
+      this.article = data.article;
+    });
   }
 
 }

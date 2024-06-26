@@ -4,3 +4,4 @@ Robert Buj Gelonch, rbuj
 - Exercici 2
   - ecommerce i server-articles de la pàctica anterior
   - server-articles de la nova pàctica
+  - actualitza les dependències de server-articles

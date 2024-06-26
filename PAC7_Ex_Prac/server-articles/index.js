@@ -4,8 +4,10 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors());
-app.use(bodyParser());
+app.use(bodyParser.json());
 app.get('/', (_, res) => res.send('Hello World!'));
+
+app.use('/api/user', require('./user'));
 
 app.use('/api/articles', require('./articles'));
 

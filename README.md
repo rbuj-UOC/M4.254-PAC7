@@ -3,3 +3,4 @@ Robert Buj Gelonch, rbuj
   - Respon les preguntes
 - Exercici 2
   - ecommerce i server-articles de la pàctica anterior
+  - server-articles de la nova pàctica

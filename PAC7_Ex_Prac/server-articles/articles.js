@@ -39,10 +39,20 @@ router.get('/', (req, res) => {
   return res.status(200).json(articles);
 });
 
+router.get('/:code', (req, res) => {
+  let articleCode = req.params.code;
+  console.log ( articleCode )
+  let foundArticle = articles.find(each => each.id == articleCode);
+  console.log(foundArticle);
+  if (foundArticle) {
+    return res.status(200).json(foundArticle);
+  }
+  return res.status(400).json({msg: 'Article with code ' + articleCode + ' not found!'});
+});
+
 router.post('/', (req, res) => {
   let article= req.body;
   if (article.id) {
-  
     return res
       .status(400)
       .json({ msg: 'Article Id seems to already have an id assigned' });

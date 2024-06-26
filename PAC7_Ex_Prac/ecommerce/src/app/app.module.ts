@@ -17,6 +17,7 @@ import { AuthStoreService } from './serveis/auth-store.service';
 import { ImagePipe } from '../shared/image.pipe';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
+import { LocalStorageService } from './serveis/local-storage.service';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { RegisterComponent } from './user/register/register.component';
     AuthGuard,
     AuthService,
     AuthStoreService,
+    LocalStorageService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

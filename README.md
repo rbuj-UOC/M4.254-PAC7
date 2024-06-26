@@ -9,3 +9,4 @@ Robert Buj Gelonch, rbuj
   - canvia el nom ArticleNewReactiveComponent a ArticleNewComponent
   - elimina els fitxers de les proves i al fitxer de configuració angular.json
     - ng config schematics.@schematics/angular:component.skipTests true
+  - canvia el text al quadre de cerca d'articles

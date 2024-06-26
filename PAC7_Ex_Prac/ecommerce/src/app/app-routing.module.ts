@@ -4,6 +4,7 @@ import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { ArticleListComponent } from './articles/article-list/article-list.component';
 import { ArticleNewComponent } from './articles/article-new/article-new.component';
+import { ArticleNewDeactivateGuard } from './guards/article-new-deactivate.guard';
 import { ArticleDetailComponent } from './articles/article-detail/article-detail.component';
 import { AuthGuard } from './guards/auth.guard';
 
@@ -13,7 +14,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'article/:id', component: ArticleDetailComponent },
   { path: 'articles/list', component: ArticleListComponent },
-  { path: 'articles/create', component: ArticleNewComponent, canActivate: [AuthGuard] },
+  { path: 'articles/create', component: ArticleNewComponent, canActivate: [AuthGuard], canDeactivate: [ArticleNewDeactivateGuard] },
   { path: '**', redirectTo: '/register' }
 ];
 

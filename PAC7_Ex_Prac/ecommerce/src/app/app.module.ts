@@ -9,6 +9,7 @@ import { ArticleDetailComponent } from './articles/article-detail/article-detail
 import { ArticleItemComponent } from './articles/article-item/article-item.component';
 import { ArticleListComponent } from './articles/article-list/article-list.component';
 import { ArticleNewComponent } from './articles/article-new/article-new.component';
+import { ArticleNewDeactivateGuard } from './guards/article-new-deactivate.guard';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthInterceptor } from './serveis/auth.interceptor';
 import { AuthService } from './serveis/auth.service';
@@ -36,6 +37,7 @@ import { RegisterComponent } from './user/register/register.component';
     ReactiveFormsModule
   ],
   providers: [
+    ArticleNewDeactivateGuard,
     AuthGuard,
     AuthService,
     AuthStoreService,

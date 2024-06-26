@@ -13,3 +13,4 @@ Robert Buj Gelonch, rbuj
   - base de codi
   - enrutament
   - protegir la ruta per crear un article: només usuaris autenticats
+  - protegir la ruta per crear un article: avís abans de sortir

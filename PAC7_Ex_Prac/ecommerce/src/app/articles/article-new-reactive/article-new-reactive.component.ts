@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Article } from '../../model/article';
-import { NameArticleValidator } from '../../../shared/name-article-validator.directive';
+import { NameArticleValidator } from '../../validators/name-article-validator.directive';
 import { ArticleService } from '../../serveis/article.service';
 
 @Component({

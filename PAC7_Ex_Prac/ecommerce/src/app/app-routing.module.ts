@@ -5,6 +5,7 @@ import { RegisterComponent } from './user/register/register.component';
 import { ArticleListComponent } from './articles/article-list/article-list.component';
 import { ArticleNewComponent } from './articles/article-new/article-new.component';
 import { ArticleDetailComponent } from './articles/article-detail/article-detail.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -12,7 +13,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'article/:id', component: ArticleDetailComponent },
   { path: 'articles/list', component: ArticleListComponent },
-  { path: 'articles/create', component: ArticleNewComponent },
+  { path: 'articles/create', component: ArticleNewComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '/register' }
 ];
 

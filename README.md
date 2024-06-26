@@ -12,3 +12,4 @@ Robert Buj Gelonch, rbuj
   - canvia el text al quadre de cerca d'articles
   - base de codi
   - enrutament
+  - protegir la ruta per crear un article: només usuaris autenticats

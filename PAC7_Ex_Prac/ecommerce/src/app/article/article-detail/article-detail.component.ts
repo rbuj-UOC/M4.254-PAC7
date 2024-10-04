@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Article } from '../../model/article';
 import { ActivatedRoute } from '@angular/router';
 
@@ -7,14 +7,13 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './article-detail.component.html',
   styleUrl: './article-detail.component.css'
 })
-export class ArticleDetailComponent {
+export class ArticleDetailComponent implements OnInit {
   public article: Article;
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.route.data.subscribe((data: {article: Article}) => {
+    this.route.data.subscribe((data: { article: Article }) => {
       this.article = data.article;
     });
   }
-
 }

@@ -9,7 +9,6 @@ import { ArticleNewComponent } from './article-new/article-new.component';
 import { ArticleItemComponent } from './article-item/article-item.component';
 import { ImagePipe } from './shared/image.pipe';
 
-
 @NgModule({
   declarations: [
     ArticleDetailComponent,
@@ -25,4 +24,4 @@ import { ImagePipe } from './shared/image.pipe';
     ReactiveFormsModule
   ]
 })
-export class ArticleModule { }
+export class ArticleModule {}

@@ -5,8 +5,7 @@ import { LocalStorageService } from './local-storage.service';
   providedIn: 'root'
 })
 export class AuthStoreService {
-
-  constructor(private localStorageService: LocalStorageService) { }
+  constructor(private localStorageService: LocalStorageService) {}
 
   set token(token: string) {
     this.localStorageService.saveData('token', token);

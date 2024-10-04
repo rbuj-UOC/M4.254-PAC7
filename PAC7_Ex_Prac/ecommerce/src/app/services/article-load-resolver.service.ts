@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  Resolve,
+  RouterStateSnapshot
+} from '@angular/router';
 import { Article } from '../model/article';
 import { ArticleService } from './article.service';
 import { Observable } from 'rxjs';
@@ -8,12 +12,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ArticleLoadResolverService implements Resolve<Article> {
+  constructor(private articleService: ArticleService) {}
 
-  constructor(private articleService: ArticleService) { }
-
-  resolve(route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot):
-    Article | Observable<Article> | Promise<Article> {
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Article | Observable<Article> | Promise<Article> {
     const articleId = route.paramMap.get('id');
     return this.articleService.getArticle(articleId);
   }

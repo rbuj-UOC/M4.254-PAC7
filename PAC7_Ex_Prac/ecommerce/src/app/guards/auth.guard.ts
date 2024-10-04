@@ -4,14 +4,17 @@ import { AuthStoreService } from '../services/auth-store.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-
-  constructor(private userStore: AuthStoreService,
-              private router: Router) {}
+  constructor(
+    private userStore: AuthStoreService,
+    private router: Router
+  ) {}
 
   canActivate(): boolean {
     console.log('AuthGuard#canActivate called');
 
-    if (this.userStore.isLoggedIn()) { return true };
+    if (this.userStore.isLoggedIn()) {
+      return true;
+    }
 
     console.log('AuthGuard#canActivate not authorized to access page');
     // Can store current route and redirect back to it

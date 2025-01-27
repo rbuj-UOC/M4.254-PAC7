@@ -11,8 +11,6 @@ import { Observable } from 'rxjs';
 export class ArticleNewDeactivateGuard
   implements CanDeactivate<ArticleNewComponent>
 {
-  constructor() {}
-
   canDeactivate(
     component: ArticleNewComponent,
     currentRoute: ActivatedRouteSnapshot,

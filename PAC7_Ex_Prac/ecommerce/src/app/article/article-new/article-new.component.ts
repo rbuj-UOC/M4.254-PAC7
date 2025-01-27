@@ -6,6 +6,8 @@ import { ArticleService } from '../../services/article.service';
 
 @Component({
   selector: 'app-article-new',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './article-new.component.html',
   styleUrl: './article-new.component.css'
 })

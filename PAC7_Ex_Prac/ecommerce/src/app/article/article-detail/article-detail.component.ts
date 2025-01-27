@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-article-detail',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './article-detail.component.html',
   styleUrl: './article-detail.component.css'
 })

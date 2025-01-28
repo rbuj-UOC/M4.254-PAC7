@@ -1,14 +1,25 @@
-<h3>{{message}}</h3>
+<h3>{{ message }}</h3>
 <div>
   <form [formGroup]="registerForm" (ngSubmit)="register()">
     <div class="input-field">
       <label for="username">Username:</label>
-      <input type="text" placeholder="Username" name="username" formControlName="username">
+      <input
+        type="text"
+        placeholder="Username"
+        name="username"
+        formControlName="username"
+      />
       <div class="error" *ngIf="username.invalid">Username is mandatory</div>
     </div>
     <div class="input-field">
       <label for="password">Password:</label>
-      <input type="password" placeholder="Password" required name="password" formControlName="password">
+      <input
+        type="password"
+        placeholder="Password"
+        required
+        name="password"
+        formControlName="password"
+      />
       <div class="error" *ngIf="password.invalid">Password is mandatory</div>
     </div>
     <button type="submit">Register</button>

@@ -1,10 +1,12 @@
 <div class="article-item" [class.sale]="article.isOnSale">
-  <div class="image"><img [src]="article.imageUrl | emptyimage" [alt]="article.name"></div>
+  <div class="image">
+    <img [src]="article.imageUrl | emptyimage" [alt]="article.name" />
+  </div>
   <div class="details">
-    <div class="name">{{article.name}}</div>
-    <div class="price">$ {{article.price}}</div>
+    <div class="name">{{ article.name }}</div>
+    <div class="price">$ {{ article.price }}</div>
     <div>
-      {{article.description}}
+      {{ article.description }}
     </div>
   </div>
 </div>

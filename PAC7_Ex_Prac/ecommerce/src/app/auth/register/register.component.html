@@ -7,8 +7,7 @@
         type="text"
         placeholder="Username"
         name="username"
-        formControlName="username"
-      />
+        formControlName="username" />
       <div class="error" *ngIf="username.invalid">Username is mandatory</div>
     </div>
     <div class="input-field">
@@ -18,8 +17,7 @@
         placeholder="Password"
         required
         name="password"
-        formControlName="password"
-      />
+        formControlName="password" />
       <div class="error" *ngIf="password.invalid">Password is mandatory</div>
     </div>
     <button type="submit">Register</button>

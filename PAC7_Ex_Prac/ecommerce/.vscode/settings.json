@@ -3,6 +3,7 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit"
   },
+  "emmet.triggerExpansionOnTab": true,
   "cSpell.language": "ca,en",
   "angular.enable-strict-mode-prompt": false
 }

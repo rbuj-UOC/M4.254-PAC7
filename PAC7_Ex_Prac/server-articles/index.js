@@ -4,7 +4,11 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json());
+
+// create application/json parser
+const jsonParser = bodyParser.json()
+app.use(jsonParser);
+
 app.get('/', (_, res) => res.send('Hello World!'));
 
 app.use('/api/user', require('./user'));

@@ -1,13 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { AuthStoreService } from '../services/auth-store.service';
+import { AuthStoreService } from '../services/auth-store-service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(
-    private userStore: AuthStoreService,
-    private router: Router
-  ) {}
+  private userStore = inject(AuthStoreService);
+  private router = inject(Router);
 
   canActivate(): boolean {
     console.log('AuthGuard#canActivate called');

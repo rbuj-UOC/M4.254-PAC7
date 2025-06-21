@@ -1,17 +1,17 @@
-import { Injectable } from '@angular/core';
-import { LocalStorageService } from './local-storage.service';
+import { Injectable, inject } from '@angular/core';
+import { LocalStorageService } from './local-storage-service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthStoreService {
-  constructor(private localStorageService: LocalStorageService) {}
+  private localStorageService = inject(LocalStorageService);
 
   set token(token: string) {
     this.localStorageService.saveData('token', token);
   }
 
-  get token() {
+  get token(): string | null {
     return this.localStorageService.getData('token');
   }
 

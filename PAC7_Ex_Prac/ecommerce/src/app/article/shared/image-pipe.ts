@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+
 @Pipe({
   name: 'emptyimage',
   // eslint-disable-next-line @angular-eslint/prefer-standalone

@@ -1,16 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { AuthStoreService } from './auth-store.service';
+import { AuthStoreService } from './auth-store-service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(
-    private http: HttpClient,
-    private authStore: AuthStoreService
-  ) {}
+  private http = inject(HttpClient);
+  private authStore = inject(AuthStoreService);
 
   login(username: string, password: string): Observable<any> {
     return this.http

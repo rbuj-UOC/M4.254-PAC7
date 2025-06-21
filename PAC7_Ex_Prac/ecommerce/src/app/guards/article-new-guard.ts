@@ -4,15 +4,13 @@ import {
   CanDeactivate,
   RouterStateSnapshot
 } from '@angular/router';
-import { ArticleNewComponent } from '../article/article-new/article-new.component';
 import { Observable } from 'rxjs';
+import { ArticleNew } from '../article/article-new/article-new';
 
 @Injectable()
-export class ArticleNewDeactivateGuard
-  implements CanDeactivate<ArticleNewComponent>
-{
+export class ArticleNewGuard implements CanDeactivate<ArticleNew> {
   canDeactivate(
-    component: ArticleNewComponent,
+    component: ArticleNew,
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot

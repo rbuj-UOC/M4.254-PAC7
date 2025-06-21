@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { Article } from '../../model/article';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Article } from '../../model/article';
 
 @Component({
   selector: 'app-article-detail',
   // eslint-disable-next-line @angular-eslint/prefer-standalone
   standalone: false,
-  templateUrl: './article-detail.component.html',
-  styleUrl: './article-detail.component.css'
+  templateUrl: './article-detail.html',
+  styleUrl: './article-detail.css'
 })
-export class ArticleDetailComponent implements OnInit {
+export class ArticleDetail implements OnInit {
+  private route = inject(ActivatedRoute);
+
   public article: Article;
-  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.route.data.subscribe((data: { article: Article }) => {

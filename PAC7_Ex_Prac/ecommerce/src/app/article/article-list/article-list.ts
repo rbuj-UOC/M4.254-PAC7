@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Article } from '../../model/article';
-import { ArticleQuantityChange } from '../../model/article-quantity-change';
-import { Observable } from 'rxjs/internal/Observable';
-import { ArticleService } from '../../services/article.service';
-import { Subject } from 'rxjs';
+import { Component, OnInit, inject } from '@angular/core';
 import {
-  startWith,
-  merge,
+  Observable,
+  Subject,
   debounceTime,
   distinctUntilChanged,
+  merge,
+  startWith,
   switchMap
-} from 'rxjs/operators';
+} from 'rxjs';
+import { Article } from '../../model/article';
+import { ArticleQuantityChange } from '../../model/article-quantity-change';
+import { ArticleService } from '../../services/article-service';
 
 @Component({
   selector: 'app-article-list',
@@ -45,23 +45,24 @@ import {
     }
   `
 })
-export class ArticleListComponent implements OnInit {
+export class ArticleList implements OnInit {
+  private articleService = inject(ArticleService);
+
   public articles$: Observable<Article[]>;
   public searchTerm = '';
 
   private searchSubject = new Subject<string>();
   private reloadArticleList = new Subject<void>();
 
-  constructor(private articleService: ArticleService) {}
-
   ngOnInit() {
-    this.articles$ = this.searchSubject.pipe(
-      startWith(this.searchTerm),
-      debounceTime(300),
-      distinctUntilChanged(),
-      merge(this.reloadArticleList),
-      switchMap((query) => this.articleService.getArticles(this.searchTerm))
-    );
+    this.articles$ = merge(
+      this.searchSubject.pipe(
+        startWith(this.searchTerm),
+        debounceTime(300),
+        distinctUntilChanged()
+      ),
+      this.reloadArticleList
+    ).pipe(switchMap(() => this.articleService.getArticles(this.searchTerm)));
   }
 
   search() {

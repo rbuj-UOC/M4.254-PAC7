@@ -1,26 +1,26 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Article } from '../../model/article';
+import { ArticleService } from '../../services/article-service';
 import { NameArticleValidator } from '../validators/name-article-validator.directive';
-import { ArticleService } from '../../services/article.service';
 
 @Component({
   selector: 'app-article-new',
   // eslint-disable-next-line @angular-eslint/prefer-standalone
   standalone: false,
-  templateUrl: './article-new.component.html',
-  styleUrl: './article-new.component.css'
+  templateUrl: './article-new.html',
+  styleUrl: './article-new.css'
 })
-export class ArticleNewComponent {
+export class ArticleNew {
+  private articleService = inject(ArticleService);
+  private fb = inject(FormBuilder);
+
   @Output() private articleCreated = new EventEmitter<void>();
 
   public message = '';
   public articleForm: FormGroup;
 
-  constructor(
-    private articleService: ArticleService,
-    private fb: FormBuilder
-  ) {
+  constructor() {
     this.createForm();
   }
 

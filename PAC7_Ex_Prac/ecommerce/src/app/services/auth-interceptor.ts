@@ -2,16 +2,17 @@ import {
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
-  HttpInterceptorFn,
   HttpRequest
 } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AuthStoreService } from './auth-store.service';
+import { AuthStoreService } from './auth-store-service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private authStore: AuthStoreService) {}
+  private authStore = inject(AuthStoreService);
 
   intercept(
     req: HttpRequest<any>,

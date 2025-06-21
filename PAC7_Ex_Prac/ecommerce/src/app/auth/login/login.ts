@@ -1,22 +1,23 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth-service';
 
 @Component({
   selector: 'app-login',
   // eslint-disable-next-line @angular-eslint/prefer-standalone
   standalone: false,
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  templateUrl: './login.html',
+  styleUrl: './login.css'
 })
-export class LoginComponent {
+export class Login {
+  private authService = inject(AuthService);
+
   public loginForm: FormGroup = new FormGroup({
     username: new FormControl(null, Validators.required),
     password: new FormControl(null, Validators.required)
   });
 
   public message = '';
-  constructor(private authService: AuthService) {}
 
   get username() {
     return this.loginForm.get('username');
